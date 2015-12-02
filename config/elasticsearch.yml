@@ -1,0 +1,32 @@
+cluster.name: docker_es_cluster
+
+path:
+  data: /data/
+  work: /data/work
+
+index.number_of_shards: 1
+index.number_of_replicas: 0
+
+# shield:
+#   authc:
+#     realms:
+#       default:
+#         type: esusers
+#         order: 0
+        
+# uncomment to allow anonymous access:
+#  anonymous:
+#    username: es_admin
+#    roles: admin
+
+script:
+  inline: on
+  indexed: on
+
+# marvel.agent.exporter.es.hosts: [ "http://marvel_export:password@http://192.168.99.101/:9200" ]
+
+http:
+  cors.enabled: true
+  
+
+network.host: _non_loopback:ipv4_

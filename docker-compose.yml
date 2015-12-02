@@ -1,0 +1,14 @@
+
+elasticnode:
+    extends:
+      file: common.yml
+      service: standalonees
+
+kibana1:
+    extends:
+      file: common.yml
+      service: kibana
+    links:
+        - elasticnode
+
+
